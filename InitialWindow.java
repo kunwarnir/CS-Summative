@@ -11,6 +11,7 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JLabel lblTitle;
   private JButton btnUser;
   private JButton btnAdmin;
+  private JButton btnLogin;
 
   private Container base;
   private CardLayout layout = new CardLayout();
@@ -61,6 +62,14 @@ public class InitialWindow extends JFrame implements ActionListener{
   public JPanel adminPanel(){
     
     JPanel panel = new JPanel();
+    panel.setLayout(null);
+    add(panel);
+
+    btnLogin = new JButton("Login");
+    btnLogin.setBounds(100, 350, 80, 50);
+    btnLogin.setActionCommand("Login");
+    btnLogin.addActionListener(this);
+    panel.add(btnLogin);
 
     return panel;
 
@@ -84,6 +93,12 @@ public class InitialWindow extends JFrame implements ActionListener{
       case "Admin":
         layout.show(base, "admin");
         break;
+      case "Login":
+        ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setSize(500, 500); // set frame size
+        myFrame.setVisible(true); // display frame
+        this.close();
     }
 
   }

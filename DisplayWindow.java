@@ -25,7 +25,7 @@ public class DisplayWindow extends JFrame implements ActionListener{
     
   }
 
-   @Override
+  @Override
   public void actionPerformed(ActionEvent e) {
     
   }
