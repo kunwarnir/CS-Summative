@@ -5,7 +5,9 @@ import java.awt.*;
 
 public class InitialWindow extends JFrame implements ActionListener{
 
-  private JPanel panel;
+  private JPanel pnlInitial;
+  private JPanel pnlAdmin;
+  private JPanel pnlUser;
   private JLabel lblTitle;
   private JButton btnUser;
   private JButton btnAdmin;
@@ -20,7 +22,20 @@ public class InitialWindow extends JFrame implements ActionListener{
     base = getContentPane();
     base.setLayout(layout);
 
-    panel = new JPanel();
+    pnlInitial = initialPanel();
+    pnlAdmin = adminPanel();
+    pnlUser = userPanel();
+
+    base.add(pnlInitial, "initial");
+    base.add(pnlAdmin, "admin");
+    base.add(pnlUser, "user");
+    layout.show(base, "initial");
+
+  }
+
+  public JPanel initialPanel(){
+
+    JPanel panel = new JPanel();
     panel.setLayout(null);
     add(panel);
 
@@ -40,6 +55,23 @@ public class InitialWindow extends JFrame implements ActionListener{
     btnAdmin.addActionListener(this);
     panel.add(btnAdmin);
 
+    return panel;
+  }
+
+  public JPanel adminPanel(){
+    
+    JPanel panel = new JPanel();
+
+    return panel;
+
+  }
+
+  public JPanel userPanel(){
+    
+    JPanel panel = new JPanel();
+
+    return panel;
+
   }
 
   @Override
@@ -47,17 +79,11 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     switch (e.getActionCommand()){
       case "User":
-        BuyWindow myFrame = new BuyWindow();
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(600, 500); // set frame size
-        myFrame.setVisible(true); // display frame
+        layout.show(base, "user");
         break;
       case "Admin":
-        BuyWindow other = new BuyWindow();
-        other.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        other.setSize(600, 500); // set frame size
-        other.setVisible(true); // display frame
-
+        layout.show(base, "admin");
+        break;
     }
 
   }
