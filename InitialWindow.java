@@ -98,7 +98,7 @@ public class InitialWindow extends JFrame implements ActionListener{
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setSize(500, 500); // set frame size
         myFrame.setVisible(true); // display frame
-        this.close();
+        this.dispose();
     }
 
   }
