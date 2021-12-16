@@ -55,14 +55,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
         first.setVisible(true); // display frame
         this.dispose();
         break;
-        break;
       case "Truck":
         DisplayWindow second = new DisplayWindow(); // create LabelFrame
         second.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         second.setSize(500, 500); // set frame size
         second.setVisible(true); // display frame
         this.dispose();
-        break;
         break;
       case "SUV":
         DisplayWindow third = new DisplayWindow(); // create LabelFrame
@@ -78,6 +76,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
         fourth.setVisible(true); // display frame
         this.dispose();
         break;
+    }
         
     
   }

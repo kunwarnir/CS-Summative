@@ -12,6 +12,12 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JButton btnUser;
   private JButton btnAdmin;
   private JButton btnLogin;
+  private JLabel lblUsername;
+  private JLabel lblUsernameError;
+  private JLabel lblPassword;
+  private JLabel lblPasswordError;
+  private JTextField txtUserName;
+  private JPasswordField txtPassword;
 
   private Container base;
   private CardLayout layout = new CardLayout();
@@ -65,8 +71,36 @@ public class InitialWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
+    lblUsername = new JLabel("Enter Your Username");
+    lblUsername.setBounds(223, 30, 150, 25);
+    panel.add(lblUsername);
+
+    lblUsernameError = new JLabel("   ");
+    lblUsernameError.setBounds(215, 100, 3000, 25);
+    lblUsernameError.setFont(new Font("Serif", Font.PLAIN, 12));
+    lblUsernameError.setForeground(Color.RED);
+    panel.add(lblUsernameError);
+
+    txtUserName = new JTextField(20);
+    txtUserName.setBounds(225, 75, 150, 25);
+    panel.add(txtUserName);
+
+    lblPassword = new JLabel("Enter Your Password");
+    lblPassword.setBounds(223, 150, 3000, 25);
+    panel.add(lblPassword);
+
+    lblPasswordError = new JLabel("   ");
+    lblPasswordError.setBounds(145, 215, 3000, 25);
+    lblPasswordError.setFont(new Font("Serif", Font.PLAIN, 12));
+    lblPasswordError.setForeground(Color.RED);
+    panel.add(lblPasswordError);
+
+    txtPassword = new JPasswordField(20);
+    txtPassword.setBounds(225, 185, 150, 25);
+    panel.add(txtPassword);
+
     btnLogin = new JButton("Login");
-    btnLogin.setBounds(100, 350, 80, 50);
+    btnLogin.setBounds(210, 350, 80, 50);
     btnLogin.setActionCommand("Login");
     btnLogin.addActionListener(this);
     panel.add(btnLogin);

@@ -5,7 +5,7 @@ class Main {
     
     InitialWindow myFrame = new InitialWindow(); // create LabelFrame
     myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    myFrame.setSize(500, 500); // set frame size
+    myFrame.setSize(600, 500); // set frame size
     myFrame.setVisible(true); // display frame
 
   }
