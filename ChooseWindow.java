@@ -51,28 +51,28 @@ public class ChooseWindow extends JFrame implements ActionListener{
       case "Sedan":
         DisplayWindow first = new DisplayWindow(); // create LabelFrame
         first.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        first.setSize(500, 500); // set frame size
+        first.setSize(600, 500); // set frame size
         first.setVisible(true); // display frame
         this.dispose();
         break;
       case "Truck":
         DisplayWindow second = new DisplayWindow(); // create LabelFrame
         second.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        second.setSize(500, 500); // set frame size
+        second.setSize(600, 500); // set frame size
         second.setVisible(true); // display frame
         this.dispose();
         break;
       case "SUV":
         DisplayWindow third = new DisplayWindow(); // create LabelFrame
         third.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        third.setSize(500, 500); // set frame size
+        third.setSize(600, 500); // set frame size
         third.setVisible(true); // display frame
         this.dispose();
         break;
       case "Coupe":
         DisplayWindow fourth = new DisplayWindow(); // create LabelFrame
         fourth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fourth.setSize(500, 500); // set frame size
+        fourth.setSize(600, 500); // set frame size
         fourth.setVisible(true); // display frame
         this.dispose();
         break;

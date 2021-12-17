@@ -130,7 +130,7 @@ public class InitialWindow extends JFrame implements ActionListener{
       case "Login":
         ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(500, 500); // set frame size
+        myFrame.setSize(600, 500); // set frame size
         myFrame.setVisible(true); // display frame
         this.dispose();
     }
