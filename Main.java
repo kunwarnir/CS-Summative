@@ -3,6 +3,8 @@ import java.io.*;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.*;
 
 class Main {
   public static void main(String[] args) {
@@ -19,14 +21,14 @@ class Main {
   {
     String path = "CarData.csv";
     String line = "";
+    ArrayList<String[]> list = new ArrayList<String[]>();
 
     try
     {
       BufferedReader br = new BufferedReader(new FileReader(path));
 
       while((line = br.readLine()) != null) {
-        String[] values = line.split(","); //ARRAY IS HERE
-        System.out.println(values[1]);
+        list.add(line.split(",")); //ARRAY IS HERE
       }
 
     } catch (FileNotFoundException e) {
@@ -34,6 +36,11 @@ class Main {
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+    String[][] array = new String[list.size()][0];
+    list.toArray(array);  
+
+    System.out.println(array[6][4]);
     
   }
 }
