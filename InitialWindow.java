@@ -46,7 +46,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
-    lblTitle = new JLabel("This is the first frame");
+    lblTitle = new JLabel("Welcome to Barrhaven Hyundai!");
     lblTitle.setBounds(150, 30, 300, 220);
     panel.add(lblTitle);
 
@@ -113,6 +113,26 @@ public class InitialWindow extends JFrame implements ActionListener{
     
     JPanel panel = new JPanel();
 
+    lblUsername = new JLabel("Enter Your Username");
+    lblUsername.setBounds(223, 30, 150, 25);
+    panel.add(lblUsername);
+
+    lblUsernameError = new JLabel("   ");
+    lblUsernameError.setBounds(215, 100, 3000, 25);
+    lblUsernameError.setFont(new Font("Serif", Font.PLAIN, 12));
+    lblUsernameError.setForeground(Color.RED);
+    panel.add(lblUsernameError);
+
+    txtUserName = new JTextField(20);
+    txtUserName.setBounds(225, 75, 150, 25);
+    panel.add(txtUserName);
+    
+    btnLogin = new JButton("Login");
+    btnLogin.setBounds(210, 350, 80, 50);
+    btnLogin.setActionCommand("Login");
+    btnLogin.addActionListener(this);
+    panel.add(btnLogin);
+
     return panel;
 
   }
@@ -128,6 +148,13 @@ public class InitialWindow extends JFrame implements ActionListener{
         layout.show(base, "admin");
         break;
       case "Login":
+        if (txtUserName.getText().isEmpty()){
+          lblUsernameError.setText("Username cannot be empty!");
+          }
+        else {
+          player.setUsername(txtUserName.getText());
+        }
+
         ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setSize(600, 500); // set frame size

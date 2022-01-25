@@ -32,8 +32,30 @@ public class Vehicle{
     DEMO, STOCK;
   }
 
+  private final Categories category;
+  private final Colours colour;
+  private final Types type;
+  private final Statuses status;
+  private final int year;
+  private final String name;
+  private final String engine;
+  private final int cylinders;
+  private final int price;
+  private final int age;
+
   public Vehicle(int year, String name, Colours colour, String engine, int cylinders, Categories category, int price, Types type, Statuses status, int age){
     
+    this.year = year;
+    this.name = name;
+    this.colour = colour;
+    this.engine = engine;
+    this.cylinders = cylinders;
+    this.category = category;
+    this. price = price;
+    this.type = type;
+    this.status = status;
+    this.age = age;
+
   }
   
   public void buy(){
@@ -41,14 +63,10 @@ public class Vehicle{
   }
 
   public void makeList(){
-    read();
 
-    for(int i = 0; i < list.size(); i++){
-      vehicleList.add(new Vehicle())
-    }
   }
 
- public static void read(){
+ public static String[][] read(){
     String path = "CarData.csv";
     String line = "";
        
@@ -69,7 +87,7 @@ public class Vehicle{
     array = new String[list.size()][0];
     list.toArray(array);  
 
-    System.out.println(array[6][4]);
+    return array;
     
   }
 
@@ -91,7 +109,7 @@ public class Vehicle{
       case "Brown": color = Colours.BROWN; break;
       case "Green": color = Colours.GREEN; break;
       case "Pink": color = Colours.PINK; break;
-      default: System.out.println("Invalid");
+      default: System.out.println("Invalid"); color = Colours.PINK;
     }
 
     String engineName = array[index][3];
@@ -107,7 +125,7 @@ public class Vehicle{
       case "Hatchback": cat = Categories.HATCHBACK; break;
       case "Truck": cat = Categories.TRUCK; break;
 
-      default: System.out.println("Invalid");
+      default: System.out.println("Invalid"); cat = Categories.TRUCK;
     }
 
     int price = Integer.valueOf(array[index][6]);
@@ -118,7 +136,7 @@ public class Vehicle{
     switch(array[index][7]){
       case "New": type = Types.NEW; break;
       case "Used": type = Types.USED; break;
-      default: System.out.println("Invalid");
+      default: System.out.println("Invalid"); type = Types.USED;
     }
 
     Statuses stat;
@@ -127,7 +145,7 @@ public class Vehicle{
       case "Demo": stat = Statuses.DEMO; break;
       case "Stock": stat = Statuses.STOCK; break;
 
-      default: System.out.println("Invalid");
+      default: System.out.println("Invalid"); stat = Statuses.STOCK;
     }
 
     return new Vehicle(year, name, color, engineName, cylindersnum, cat, price, type, stat, age);
