@@ -19,6 +19,8 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JTextField txtUserName;
   private JPasswordField txtPassword;
 
+  public static Person user;
+
   private Container base;
   private CardLayout layout = new CardLayout();
 
@@ -143,16 +145,18 @@ public class InitialWindow extends JFrame implements ActionListener{
     switch (e.getActionCommand()){
       case "User":
         layout.show(base, "user");
+        user = User.getInstance();
         break;
       case "Admin":
         layout.show(base, "admin");
+        user = Admin.getInstance();
         break;
       case "Login":
         if (txtUserName.getText().isEmpty()){
           lblUsernameError.setText("Username cannot be empty!");
           }
         else {
-          player.setUsername(txtUserName.getText());
+          user.setUsername(txtUserName.getText());
         }
 
         ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame

@@ -3,7 +3,11 @@ abstract class Person{
   public String username;
 
 
-  public void getUsername(){
+  public String getUsername(){
     return username;
+  }
+
+  public String setUsername(String user){
+    this.username = user;
   }
 }
