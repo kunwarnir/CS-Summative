@@ -1,7 +1,13 @@
 public class Admin extends Person {
-  
-  public Admin(){
 
+  private static final Admin INSTANCE = new Admin();
+  
+  private Admin(){
+
+  }
+
+  private Admin(String user){
+    this.username = user;
   }
 
   public void Buy(int balance, int price, Vehicle.Statuses stat){
@@ -11,6 +17,10 @@ public class Admin extends Person {
     else {
       System.out.println("E");
     }
+  }
+
+  public static Admin getInstance(){
+    return INSTANCE;
   }
 
 }
