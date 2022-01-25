@@ -23,7 +23,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     JPanel panel = new JPanel();
     panel.setLayout(null);
     add(panel);
-    JFrame.getContentPane().setBackground(Color.YELLOW);
+    this.getContentPane().setBackground(Color.YELLOW);
     btnSedan = new JButton("SEDAN");
     btnSedan.setBounds(0, 0, 250, 250);
     btnSedan.setActionCommand("Sedan");
