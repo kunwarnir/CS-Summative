@@ -14,6 +14,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   JButton btnTruck;
   JButton btnSUV;
   JButton btnCoupe;
+  JButton btnHatchback;
 
   JPanel pnlFirst;
   JPanel pnlSedan;
@@ -30,7 +31,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   public ChooseWindow(){
 
-    super("Choose Window"); // Set frame heading
+    super("Choose Window"); // Set frame 
 
     base = getContentPane();
     base.setLayout(layout);
@@ -80,6 +81,8 @@ public class ChooseWindow extends JFrame implements ActionListener{
     btnCoupe.setActionCommand("Coupe");
     btnCoupe.addActionListener(this);
     panel.add(btnCoupe); // button added to screen
+
+
 
     return panel;
   }
@@ -159,27 +162,32 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   public static String displayList (String type){
 
-    String displayString = " ";
+    String displayString = "";
+    int i = 1;
 
     switch (type){
       case "sedan":
         for (Vehicle car: carList.getSedans()){
-          displayString += car.getName() + "/n";
+          displayString += i + ". " + car.getName() + "\n";
+          i++;
         }
         break;
       case "SUV":
-        for (Vehicle car: carList.getSedans()){
-          displayString += car.getName() + "/n";
+        for (Vehicle car: carList.getSUVs()){
+          displayString += i + ". " +car.getName() + "\n";
+          i++;
         }
         break;
       case "truck":
-        for (Vehicle car: carList.getSedans()){
-          displayString += car.getName() + "/n";
+        for (Vehicle car: carList.getTrucks()){
+          displayString += i + ". " +car.getName() + "\n";
+          i++;
         }
         break;
       case "coupe":
-        for (Vehicle car: carList.getSedans()){
-          displayString += car.getName() + "/n";
+        for (Vehicle car: carList.getCoupes()){
+          displayString += i + ". " +car.getName() + "\n";
+          i++;
         }
         break;
       default: 
