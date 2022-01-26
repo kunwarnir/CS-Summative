@@ -20,33 +20,80 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
     super("Choose Window"); // user or admin chooses what vehicle they want
 
-    JPanel panel = new JPanel();
+    JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel);
     this.getContentPane().setBackground(Color.YELLOW);
-    btnSedan = new JButton("SEDAN");  
+
+    
+  }
+
+  public JPanel First(){
+    JPanel panel = new JPanel(); // create new Jpanel
+    panel.setLayout(null);
+    add(panel);
+
+    btnSedan = new JButton("SEDAN"); // button sedan created 
     btnSedan.setBounds(0, 0, 250, 250); // set frame size
     btnSedan.setActionCommand("Sedan");
     btnSedan.addActionListener(this);
-    panel.add(btnSedan);
+    panel.add(btnSedan); // button added to screen
 
-    btnTruck = new JButton("TRUCK");
+    btnTruck = new JButton("TRUCK"); // button truck created
     btnTruck.setBounds(0, 250, 250, 250); // set frame size
     btnTruck.setActionCommand("Truck");
     btnTruck.addActionListener(this);
-    panel.add(btnTruck);
+    panel.add(btnTruck); // button added to screen
 
-    btnSUV = new JButton("SUV");
+    btnSUV = new JButton("SUV"); // button suv created
     btnSUV.setBounds(250, 0, 250, 250); // set frame size
     btnSUV.setActionCommand("SUV");
     btnSUV.addActionListener(this);
-    panel.add(btnSUV);
+    panel.add(btnSUV); // button added to screen
 
-    btnCoupe = new JButton("COUPE");
+    btnCoupe = new JButton("COUPE"); // button coupe created
     btnCoupe.setBounds(250, 250, 250, 250); // set frame size
     btnCoupe.setActionCommand("Coupe");
     btnCoupe.addActionListener(this);
-    panel.add(btnCoupe);
+    panel.add(btnCoupe); // button added to screen
+
+    return panel;
+  }
+
+  public JPanel Sedan(){
+    JPanel panel = new JPanel(); // create new Jpanel
+    panel.setLayout(null);
+    add(panel);
+
+    return panel;
+
+  }
+
+  public JPanel SUV(){
+    JPanel panel = new JPanel(); // create new Jpanel
+    panel.setLayout(null);
+    add(panel);
+
+    return panel;
+
+  }
+
+  public JPanel Truck(){
+    JPanel panel = new JPanel(); // create new Jpanel
+    panel.setLayout(null);
+    add(panel);
+
+    return panel;
+
+  }
+
+  public JPanel Coupe(){
+    JPanel panel = new JPanel(); // create new Jpanel
+    panel.setLayout(null);
+    add(panel);
+
+    return panel;
+
   }
 
   @Override
