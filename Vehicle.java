@@ -92,7 +92,7 @@ public class Vehicle{
   public String carToString(){
     return year + name + colour + engine + cylinders + category + price + type + status + age;
     
-    }
   }
+}
 
 }
