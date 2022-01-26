@@ -19,7 +19,9 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JTextField txtUserName;
   private JPasswordField txtPassword;
 
-  public static Person user;
+  private final String pass = "password";
+
+  public static Person client;
 
   private Container base;
   private CardLayout layout = new CardLayout();
@@ -38,6 +40,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     base.add(pnlInitial, "initial");
     base.add(pnlAdmin, "admin");
     base.add(pnlUser, "user");
+
     layout.show(base, "initial");
 
   }
@@ -87,7 +90,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     txtUserName.setBounds(225, 75, 150, 25);
     panel.add(txtUserName);
 
-    lblPassword = new JLabel("Enter Your Password");
+    lblPassword = new JLabel("Enter The Password");
     lblPassword.setBounds(223, 150, 3000, 25);
     panel.add(lblPassword);
 
@@ -114,6 +117,8 @@ public class InitialWindow extends JFrame implements ActionListener{
   public JPanel userPanel(){
     
     JPanel panel = new JPanel();
+    panel.setLayout(null);
+    add(panel);
 
     lblUsername = new JLabel("Enter Your Username");
     lblUsername.setBounds(223, 30, 150, 25);
@@ -145,20 +150,14 @@ public class InitialWindow extends JFrame implements ActionListener{
     switch (e.getActionCommand()){
       case "User":
         layout.show(base, "user");
-        user = User.getInstance();
+        client = User.getInstance();
         break;
       case "Admin":
         layout.show(base, "admin");
-        user = Admin.getInstance();
+        client = Admin.getInstance();
+
         break;
       case "Login":
-        if (txtUserName.getText().isEmpty()){
-          lblUsernameError.setText("Username cannot be empty!");
-          }
-        else {
-          user.setUsername(txtUserName.getText());
-        }
-
         ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         myFrame.setSize(600, 500); // set frame size
