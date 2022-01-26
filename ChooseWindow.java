@@ -15,15 +15,36 @@ public class ChooseWindow extends JFrame implements ActionListener{
   JButton btnSUV;
   JButton btnCoupe;
 
+  JPanel pnlFirst;
+  JPanel pnlSedan;
+  JPanel pnlSUV;
+  JPanel pnlTruck;
+  JPanel pnlCoupe;
+
+  private Container base;
+  private CardLayout layout = new CardLayout(); // create new cardlayout
+
 
   public ChooseWindow(){
 
-    super("Choose Window"); // user or admin chooses what vehicle they want
+    super("Choose Window"); // Set frame heading
 
-    JPanel panel = new JPanel(); // create new Jpanel
-    panel.setLayout(null);
-    add(panel);
-    this.getContentPane().setBackground(Color.YELLOW);
+    base = getContentPane();
+    base.setLayout(layout);
+
+    pnlFirst = First();
+    pnlSedan = Sedan();
+    pnlSUV = SUV();
+    pnlTruck = Truck();
+    pnlCoupe = Coupe();
+
+    base.add(pnlFirst, "first");
+    base.add(pnlSedan, "sedan");
+    base.add(pnlSUV, "SUV");
+    base.add(pnlTruck, "truck");
+    base.add(pnlCoupe, "coupe");
+
+    layout.show(base, "first");
 
     
   }
