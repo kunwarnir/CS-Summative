@@ -21,9 +21,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
   JPanel pnlTruck;
   JPanel pnlCoupe;
 
+  JTextArea txtDisplay;
+
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
 
+  static VehicleList carList = VehicleList.getInstance();
 
   public ChooseWindow(){
 
@@ -86,6 +89,11 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
+    txtDisplay = new JTextArea(displayList("sedan"));
+    txtDisplay.setBounds(215, 85, 175, 225);
+    panel.add(txtDisplay);
+
+
     return panel;
 
   }
@@ -94,6 +102,10 @@ public class ChooseWindow extends JFrame implements ActionListener{
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel);
+
+    txtDisplay = new JTextArea(displayList("SUV"));
+    txtDisplay.setBounds(215, 85, 175, 225);
+    panel.add(txtDisplay);
 
     return panel;
 
@@ -104,6 +116,10 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
+    txtDisplay = new JTextArea(displayList("truck"));
+    txtDisplay.setBounds(215, 85, 175, 225);
+    panel.add(txtDisplay);
+
     return panel;
 
   }
@@ -111,6 +127,10 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public JPanel Coupe(){
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+
+    txtDisplay = new JTextArea(displayList("coupe"));
+    txtDisplay.setBounds(215, 85, 175, 225);
+    panel.add(txtDisplay);
     add(panel);
 
     return panel;
@@ -121,36 +141,50 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public void actionPerformed(ActionEvent e) {
     switch (e.getActionCommand()){
       case "Sedan":
-        DisplayWindow first = new DisplayWindow(); // create LabelFrame
-        first.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        first.setSize(600, 500); // set frame size
-        first.setVisible(true); // display frame
-        this.dispose();
+        layout.show(base, "sedan");
         break;
       case "Truck":
-        DisplayWindow second = new DisplayWindow(); // create LabelFrame
-        second.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        second.setSize(600, 500); // set frame size
-        second.setVisible(true); // display frame
-        this.dispose();
+        layout.show(base, "truck");
         break;
       case "SUV":
-        DisplayWindow third = new DisplayWindow(); // create LabelFrame
-        third.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        third.setSize(600, 500); // set frame size
-        third.setVisible(true); // display frame
-        this.dispose();
+        layout.show(base, "SUV");
         break;
       case "Coupe":
-        DisplayWindow fourth = new DisplayWindow(); // create LabelFrame
-        fourth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        fourth.setSize(600, 500); // set frame size
-        fourth.setVisible(true); // display frame
-        this.dispose();
+        layout.show(base, "coupe");
         break;
     }
         
     
+  }
+
+  public static String displayList (String type){
+
+    String displayString = " ";
+
+    switch (type){
+      case "sedan":
+        for (Vehicle car: carList.getSedans()){
+          displayString += car.getName() + "/n";
+        }
+        break;
+      case "SUV":
+        for (Vehicle car: carList.getSedans()){
+          displayString += car.getName() + "/n";
+        }
+        break;
+      case "truck":
+        for (Vehicle car: carList.getSedans()){
+          displayString += car.getName() + "/n";
+        }
+        break;
+      case "coupe":
+        for (Vehicle car: carList.getSedans()){
+          displayString += car.getName() + "/n";
+        }
+        break;
+      default: 
+        System.out.println("Invalid");
+    }
   }
 
 }
