@@ -16,12 +16,18 @@ class VehicleList {
   static String[][] array;
   static List<Vehicle> vehicleList;
 
+  private static final User INSTANCE = new User();
+
   public VehicleList(){
 
     this.vehicleList = new ArrayList<>();
 
     setList();
     
+  }
+
+  public static VehicleList getInstance(){
+    return INSTANCE;
   }
 
   public void setList(){
