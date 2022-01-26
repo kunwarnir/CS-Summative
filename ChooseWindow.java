@@ -185,6 +185,8 @@ public class ChooseWindow extends JFrame implements ActionListener{
       default: 
         System.out.println("Invalid");
     }
+
+    return displayString;
   }
 
 }
