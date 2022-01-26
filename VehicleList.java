@@ -20,7 +20,7 @@ class VehicleList {
   static List<Vehicle> trucks;
   static List<Vehicle> coupes;
 
-  private static final User INSTANCE = new User();
+  private static final VehicleList INSTANCE = new VehicleList();
 
   public VehicleList(){
 
