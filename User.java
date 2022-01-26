@@ -1,3 +1,4 @@
+// when user is chosen
 public class User extends Person{
   private static final User INSTANCE = new User();
 

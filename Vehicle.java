@@ -9,27 +9,28 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.*; 
 
+// Main vehicle information screen
 public class Vehicle{
-
+// ARRAY LIST HERE
   static ArrayList<String[]> list = new ArrayList<String[]>(); 
   static String[][] array;
 
   List<Vehicle> vehicleList = new ArrayList<Vehicle>();
   
   public enum Categories{
-    SEDAN, SUV, COUPE, HATCHBACK, TRUCK;
+    SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of car
   }
 
   public enum Colours{
-    SILVER, WHITE, BLUE, BLACK, GRAY, ORANGE, RED, BROWN, GREEN, PINK;
+    SILVER, WHITE, BLUE, BLACK, GRAY, ORANGE, RED, BROWN, GREEN, PINK; // Colour of vehicles
   }
 
   public enum Types{
-    NEW, USED;
+    NEW, USED; // type of car
   }
 
   public enum Statuses{
-    DEMO, STOCK;
+    DEMO, STOCK; // car status
   }
 
   private final Categories category;

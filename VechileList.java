@@ -1,0 +1,7 @@
+class VehicleList {
+
+  public VehicleList(){
+    
+  }
+
+}

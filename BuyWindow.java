@@ -8,7 +8,7 @@ public class BuyWindow extends JFrame{
 
   public BuyWindow(){
 
-    super("Buy Window");
+    super("Buy Window"); 
 
     panel = new JPanel();
     panel.setLayout(null);

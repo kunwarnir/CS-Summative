@@ -7,7 +7,7 @@ abstract class Person{
     return username;
   }
 
-  public String setUsername(String user){
+  public void setUsername(String user){
     this.username = user;
   }
 }

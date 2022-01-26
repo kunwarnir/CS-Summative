@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.awt.*;
 
 
-
+// This is where the user or admin will be able to choose what vehicle they want to either buy or view
 
 
 public class ChooseWindow extends JFrame implements ActionListener{
@@ -24,7 +24,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
     this.getContentPane().setBackground(Color.YELLOW);
-    btnSedan = new JButton("SEDAN");
+    btnSedan = new JButton("SEDAN"); // 
     btnSedan.setBounds(0, 0, 250, 250);
     btnSedan.setActionCommand("Sedan");
     btnSedan.addActionListener(this);

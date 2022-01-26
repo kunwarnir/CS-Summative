@@ -1,3 +1,4 @@
+// when admin is chosen
 public class Admin extends Person {
 
   private static final Admin INSTANCE = new Admin();
