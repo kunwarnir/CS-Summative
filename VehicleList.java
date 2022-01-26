@@ -40,7 +40,7 @@ class VehicleList {
   public List<Vehicle> getSedans(){
     return sedans;
   }
-  public List<Vehicle> getSUVS(){
+  public List<Vehicle> getSUVs(){
     return SUVs;
   }
   public List<Vehicle> getTrucks(){
