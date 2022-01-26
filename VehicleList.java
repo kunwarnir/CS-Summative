@@ -15,12 +15,10 @@ class VehicleList {
   static ArrayList<String[]> list = new ArrayList<String[]>(); 
   static String[][] array;
   static List<Vehicle> vehicleList;
-  static List<Vehicle> sedans;
-  static List<Vehicle> SUVs;
-  static List<Vehicle> trucks;
-  static List<Vehicle> coupes;
-
-  private static final VehicleList INSTANCE = new VehicleList();
+  static List<Vehicle> sedans = new ArrayList<>();
+  static List<Vehicle> SUVs = new ArrayList<>();
+  static List<Vehicle> trucks = new ArrayList<>();
+  static List<Vehicle> coupes = new ArrayList<>();
 
   public VehicleList(){
 
@@ -29,10 +27,6 @@ class VehicleList {
     setList();
     makeInd();
     
-  }
-
-  public static VehicleList getInstance(){
-    return INSTANCE;
   }
 
   public void setList(){

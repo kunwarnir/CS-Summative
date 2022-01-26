@@ -26,7 +26,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
 
-  static VehicleList carList = VehicleList.getInstance();
+  static VehicleList carList = new VehicleList();
 
   public ChooseWindow(){
 
