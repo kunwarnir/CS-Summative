@@ -18,32 +18,32 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   public ChooseWindow(){
 
-    super("Choose Window");
+    super("Choose Window"); // user or admin chooses what vehicle they want
 
     JPanel panel = new JPanel();
     panel.setLayout(null);
     add(panel);
     this.getContentPane().setBackground(Color.YELLOW);
-    btnSedan = new JButton("SEDAN"); // 
-    btnSedan.setBounds(0, 0, 250, 250);
+    btnSedan = new JButton("SEDAN");  
+    btnSedan.setBounds(0, 0, 250, 250); // set frame size
     btnSedan.setActionCommand("Sedan");
     btnSedan.addActionListener(this);
     panel.add(btnSedan);
 
     btnTruck = new JButton("TRUCK");
-    btnTruck.setBounds(0, 250, 250, 250);
+    btnTruck.setBounds(0, 250, 250, 250); // set frame size
     btnTruck.setActionCommand("Truck");
     btnTruck.addActionListener(this);
     panel.add(btnTruck);
 
     btnSUV = new JButton("SUV");
-    btnSUV.setBounds(250, 0, 250, 250);
+    btnSUV.setBounds(250, 0, 250, 250); // set frame size
     btnSUV.setActionCommand("SUV");
     btnSUV.addActionListener(this);
     panel.add(btnSUV);
 
     btnCoupe = new JButton("COUPE");
-    btnCoupe.setBounds(250, 250, 250, 250);
+    btnCoupe.setBounds(250, 250, 250, 250); // set frame size
     btnCoupe.setActionCommand("Coupe");
     btnCoupe.addActionListener(this);
     panel.add(btnCoupe);

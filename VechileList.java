@@ -1,7 +1,0 @@
-class VehicleList {
-
-  public VehicleList(){
-    
-  }
-
-}

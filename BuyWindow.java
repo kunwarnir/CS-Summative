@@ -8,13 +8,13 @@ public class BuyWindow extends JFrame{
 
   public BuyWindow(){
 
-    super("Buy Window"); 
+    super("Buy Window"); // buy car button
 
     panel = new JPanel();
     panel.setLayout(null);
     add(panel);
 
-    label = new JLabel("This is the Buying frame");
+    label = new JLabel("This is the Buying frame"); // displays the vehicle bought
     label.setBounds(150, 30, 300, 220);
     panel.add(label);
 

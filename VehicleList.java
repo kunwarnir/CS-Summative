@@ -1,0 +1,121 @@
+import java.io.BufferedReader;  
+import java.io.FileReader;  
+import java.io.IOException;
+import javax.swing.*;
+import java.io.*;
+import java.io.IOException;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.util.ArrayList;
+import java.util.*; 
+
+
+class VehicleList {
+
+  static ArrayList<String[]> list = new ArrayList<String[]>(); 
+  static String[][] array;
+  static List<Vehicle> vehicleList;
+
+  public VehicleList(){
+
+    this.vehicleList = new ArrayList<>();
+
+    setList();
+    
+  }
+
+  public void setList(){
+    String[][] readArray = read();
+
+    for (int i = 1; i < readArray.length; i++){
+      vehicleList.add(transform(i, readArray));
+    }
+  }
+  
+  public static String[][] read(){
+    String path = "CarData.csv";
+    String line = "";
+       
+    try
+    {
+      BufferedReader br = new BufferedReader(new FileReader(path));
+
+      while((line = br.readLine()) != null) {
+        list.add(line.split(",")); //ARRAY IS HERE
+      }
+
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    array = new String[list.size()][0];
+    list.toArray(array);  
+
+    return array;
+    
+  }
+
+  public Vehicle transform(int index, String[][] array){
+
+    int year = Integer.valueOf(array[index][0]);
+    String name = array[index][1];
+    Vehicle.Colours color;
+
+
+    switch(array[index][2]){
+      case "Silver": color = Vehicle.Colours.SILVER; break;
+      case "White": color = Vehicle.Colours.WHITE; break;
+      case "Blue": color = Vehicle.Colours.BLUE; break;
+      case "Black": color = Vehicle.Colours.BLACK; break;
+      case "Gray": color = Vehicle.Colours.GRAY; break;
+      case "Orange": color = Vehicle.Colours.ORANGE; break;
+      case "Red": color = Vehicle.Colours.RED; break;
+      case "Brown": color = Vehicle.Colours.BROWN; break;
+      case "Green": color = Vehicle.Colours.GREEN; break;
+      case "Pink": color = Vehicle.Colours.PINK; break;
+      default: System.out.println("Invalid"); color = Vehicle.Colours.PINK;
+    }
+
+    String engineName = array[index][3];
+
+    int cylindersnum = Integer.valueOf(array[index][4]);
+
+    Vehicle.Categories cat;
+
+    switch(array[index][5]){
+      case "Sedan": cat = Vehicle.Categories.SEDAN; break;
+      case "SUV": cat = Vehicle.Categories.SUV; break;
+      case "Coupe": cat = Vehicle.Categories.COUPE; break;
+      case "Hatchback": cat = Vehicle.Categories.HATCHBACK; break;
+      case "Truck": cat = Vehicle.Categories.TRUCK; break;
+
+      default: System.out.println("Invalid"); cat = Vehicle.Categories.TRUCK;
+    }
+
+    int price = Integer.valueOf(array[index][6]);
+    int age =  Integer.valueOf(array[index][9]);
+
+    Vehicle.Types type;
+
+    switch(array[index][7]){
+      case "New": type = Vehicle.Types.NEW; break;
+      case "Used": type = Vehicle.Types.USED; break;
+      default: System.out.println("Invalid"); type = Vehicle.Types.USED;
+    }
+
+    Vehicle.Statuses stat;
+
+    switch(array[index][8]){
+      case "Demo": stat = Vehicle.Statuses.DEMO; break;
+      case "Stock": stat = Vehicle.Statuses.STOCK; break;
+
+      default: System.out.println("Invalid"); stat = Vehicle.Statuses.STOCK;
+    }
+
+    return new Vehicle(year, name, color, engineName, cylindersnum, cat, price, type, stat, age);
+
+  }
+
+}

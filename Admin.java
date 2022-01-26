@@ -7,7 +7,7 @@ public class Admin extends Person {
 
   }
 
-  private Admin(String user){
+  private Admin(String user){ // admin enters username
     this.username = user;
   }
 
