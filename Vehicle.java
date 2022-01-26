@@ -93,6 +93,5 @@ public class Vehicle{
     return year + name + colour + engine + cylinders + category + price + type + status + age;
     
   }
-}
 
 }

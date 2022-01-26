@@ -58,16 +58,16 @@ class VehicleList {
 
   public void makeInd(){
     for (Vehicle car: vehicleList){
-      if (car.getCategory == Vehicle.Categories.SEDAN){
+      if (car.getCategory() == Vehicle.Categories.SEDAN){
         sedans.add(car);
       }
-      else if (car.getCategory == Vehicle.Categories.SUV){
+      else if (car.getCategory() == Vehicle.Categories.SUV){
         SUVs.add(car);
       }
-      else if (car.getCategory == Vehicle.Categories.TRUCK){
+      else if (car.getCategory() == Vehicle.Categories.TRUCK){
         trucks.add(car);
       }
-      else if (car.getCategory == Vehicle.Categories.COUPE){
+      else if (car.getCategory() == Vehicle.Categories.COUPE){
         coupes.add(car);
       }
       else {
