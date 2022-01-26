@@ -9,7 +9,7 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.*; 
 
-// Main vehicle information screen
+// Main vehicle class
 public class Vehicle{
 // ARRAY LIST HERE
   
@@ -57,12 +57,13 @@ public class Vehicle{
     this.age = age;
 
   }
+
+  public Categories getCategory(){
+    return category;
+  }
   
   public void buy(){
     
   }
 
-  public void makeList(){
-
-  }
 }
