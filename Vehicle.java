@@ -94,9 +94,5 @@ public class Vehicle{
     
     }
   }
-  
-  public void buy(){
-    
-  }
 
 }

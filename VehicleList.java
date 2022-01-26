@@ -71,7 +71,7 @@ class VehicleList {
         coupes.add(car);
       }
       else {
-        System.out.println("Problem")
+        System.out.println("Problem");
       }
     }
   }

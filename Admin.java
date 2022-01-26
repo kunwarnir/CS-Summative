@@ -1,4 +1,4 @@
-// when admin is chosen
+
 public class Admin extends Person {
 
   private static final Admin INSTANCE = new Admin();
@@ -7,11 +7,12 @@ public class Admin extends Person {
 
   }
 
-  private Admin(String user){ // admin enters username
+  private Admin(String user){ 
     this.username = user;
   }
 
-  public void Buy(int balance, int price, Vehicle.Statuses stat){
+  public void Buy(int balance, int price,
+   Vehicle.Statuses stat){
     if (price > balance){
       System.out.println("This car cannot be bought");
     }

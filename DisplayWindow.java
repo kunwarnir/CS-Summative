@@ -10,7 +10,7 @@ public class DisplayWindow extends JFrame implements ActionListener{
   private JButton btn;
 
   private Container base;
-  private CardLayout layout = new CardLayout();
+  private CardLayout layout = new CardLayout(); // create new cardlayout
 
   public DisplayWindow(){
 
@@ -19,9 +19,9 @@ public class DisplayWindow extends JFrame implements ActionListener{
     base = getContentPane();
     base.setLayout(layout);
 
-    panel = new JPanel();
+    panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    add(panel);
+    add(panel); // panel added
     
   }
 

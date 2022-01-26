@@ -10,13 +10,13 @@ public class BuyWindow extends JFrame{
 
     super("Buy Window"); // buy car button
 
-    panel = new JPanel();
+    panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    add(panel);
+    add(panel); // panel added
 
     label = new JLabel("This is the Buying frame"); // displays the vehicle bought
-    label.setBounds(150, 30, 300, 220);
-    panel.add(label);
+    label.setBounds(150, 30, 300, 220); // set frame size
+    panel.add(label); // panel added
 
   }
 
