@@ -64,7 +64,7 @@ public class Vehicle{
   public String getName(){
     return name;
   }
-  public Colours getColourI(){
+  public Colours getColour(){
     return colour;
   }
   public String getEngine(){
@@ -87,6 +87,12 @@ public class Vehicle{
   }
   public int getAge(){
     return age;
+  }
+
+  public String carToString(){
+    return year + name + colour + engine + cylinders + category + price + type + status + age;
+    
+    }
   }
   
   public void buy(){
