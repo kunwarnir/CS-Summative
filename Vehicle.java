@@ -58,8 +58,35 @@ public class Vehicle{
 
   }
 
+  public int getYear(){
+    return year;
+  }
+  public String getName(){
+    return name;
+  }
+  public Colours getColourI(){
+    return colour;
+  }
+  public String getEngine(){
+    return engine;
+  }
+  public int getCylinders(){
+    return cylinders;
+  }
   public Categories getCategory(){
     return category;
+  }
+  public int getPrice(){
+    return price;
+  }
+  public Types getType(){
+    return type;
+  }
+  public Statuses getStatus(){
+    return status;
+  }
+  public int getAge(){
+    return age;
   }
   
   public void buy(){
