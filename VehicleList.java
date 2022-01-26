@@ -15,6 +15,10 @@ class VehicleList {
   static ArrayList<String[]> list = new ArrayList<String[]>(); 
   static String[][] array;
   static List<Vehicle> vehicleList;
+  static List<Vehicle> sedans;
+  static List<Vehicle> SUVs;
+  static List<Vehicle> trucks;
+  static List<Vehicle> coupes;
 
   private static final User INSTANCE = new User();
 
@@ -23,6 +27,7 @@ class VehicleList {
     this.vehicleList = new ArrayList<>();
 
     setList();
+    makeInd();
     
   }
 
@@ -35,6 +40,26 @@ class VehicleList {
 
     for (int i = 1; i < readArray.length; i++){
       vehicleList.add(transform(i, readArray));
+    }
+  }
+
+  public void makeInd(){
+    for (Vehicle car: vehicleList){
+      if (car.getCategory == Vehicle.Categories.SEDAN){
+        sedans.add(car);
+      }
+      else if (car.getCategory == Vehicle.Categories.SUV){
+        SUVs.add(car);
+      }
+      else if (car.getCategory == Vehicle.Categories.TRUCK){
+        trucks.add(car);
+      }
+      else if (car.getCategory == Vehicle.Categories.COUPE){
+        coupes.add(car);
+      }
+      else {
+        System.out.println("Problem")
+      }
     }
   }
   
