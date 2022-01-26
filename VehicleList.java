@@ -43,6 +43,19 @@ class VehicleList {
     }
   }
 
+  public List<Vehicle> getSedans(){
+    return sedans;
+  }
+  public List<Vehicle> getSUVS(){
+    return SUVs;
+  }
+  public List<Vehicle> getTrucks(){
+    return trucks;
+  }
+  public List<Vehicle> getCoupes(){
+    return coupes;
+  }
+
   public void makeInd(){
     for (Vehicle car: vehicleList){
       if (car.getCategory == Vehicle.Categories.SEDAN){
