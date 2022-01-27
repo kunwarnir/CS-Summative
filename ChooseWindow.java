@@ -35,7 +35,6 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   public static Vehicle chosenVehicle;
   private int num;
-
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
   private JButton btnSubmit1; // button for submit 
