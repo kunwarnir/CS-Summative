@@ -16,7 +16,7 @@ abstract class Person{
     this.canBuy = can;
   }
 
-  public boolean isCanBuy(){
+  public boolean getCanBuy(){
     return canBuy;
   }
 }

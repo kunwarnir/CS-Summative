@@ -11,7 +11,8 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
   private JButton btnBack;
 
   static Vehicle chosenVehicle = ChooseWindow.chosenVehicle;
-  static Person user = InitialWindow.user;
+  static Person user = InitialWindow.client;
+  static VehicleList carList = ChooseWindow.carList;
 
   JTextArea txtDisplay;
 
@@ -48,6 +49,12 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
 
     switch (e.getActionCommand()){
       case "Buy":
+        if (client.getCanBuy){
+          carList.remove(chosenVehicle);
+        }
+        else {
+          System.out.println("You do not have authority to buy");
+        }
         
     }
 

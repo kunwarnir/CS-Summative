@@ -29,6 +29,26 @@ class VehicleList {
     
   }
 
+  public void remove(Vehicle car){
+    vehicleList.remove(car);
+    
+    if (car.getCategory() == Vehicle.Categories.SEDAN){
+      sedans.remove(car);
+    }
+    else if (car.getCategory() == Vehicle.Categories.SUV){
+      SUVs.remove(car);
+    }
+    else if (car.getCategory() == Vehicle.Categories.TRUCK){
+      trucks.remove(car);
+    }
+    else if (car.getCategory() == Vehicle.Categories.COUPE){
+      coupes.remove(car);
+    }
+    else {
+      System.out.println("Problem");
+    }
+  }
+
   public void setList(){
     String[][] readArray = read();
 

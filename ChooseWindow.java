@@ -72,7 +72,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     public JPanel First(){ // vehicle category panel
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    panel.setBackground(new Color(176,216,230)); 
+    panel.setBackground(new Color(176,216,230)); // set frame size
     add(panel); // panel added
 
     btnSedan = new JButton(new ImageIcon("Images/category_sedan.png")); // button sedan created 
@@ -106,7 +106,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    panel.setBackground(new Color(176,216,230)); 
+    panel.setBackground(new Color(176,216,230)); // set frame size
     add(panel); // panel added
 // 
     txtDisplay = new JTextArea(displayList(carList.getSedans())); // new Jtextarea created
@@ -178,7 +178,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public JPanel Coupe(){ // coupe panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    panel.setBackground(new Color(176,216,230)); 
+    panel.setBackground(new Color(176,216,230)); // set frame size
     add(panel); 
 
     txtDisplay = new JTextArea(displayList(carList.getCoupes())); // new Jtextarea created

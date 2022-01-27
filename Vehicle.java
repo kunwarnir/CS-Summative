@@ -17,7 +17,7 @@ public class Vehicle{
   ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
   
   public enum Categories{
-    SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of vehicles
+    SEDAN, SUV, COUPE, TRUCK; // model of vehicles
   }
 
   public enum Colours{
