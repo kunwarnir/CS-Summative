@@ -12,13 +12,13 @@ import java.util.*;
 
 class VehicleList {
 
-  static ArrayList<String[]> list = new ArrayList<String[]>(); 
-  static String[][] array;
-  static ArrayList<Vehicle> vehicleList;
-  static ArrayList<Vehicle> sedans = new ArrayList<>();
-  static ArrayList<Vehicle> SUVs = new ArrayList<>();
-  static ArrayList<Vehicle> trucks = new ArrayList<>();
-  static ArrayList<Vehicle> coupes = new ArrayList<>();
+  private static ArrayList<String[]> list = new ArrayList<String[]>(); 
+  private static String[][] array;
+  private static ArrayList<Vehicle> vehicleList;
+  private static ArrayList<Vehicle> sedans = new ArrayList<>();
+  private static ArrayList<Vehicle> SUVs = new ArrayList<>();
+  private static ArrayList<Vehicle> trucks = new ArrayList<>();
+  private static ArrayList<Vehicle> coupes = new ArrayList<>();
 
   private static final VehicleList INSTANCE = new VehicleList();
 

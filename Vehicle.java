@@ -13,8 +13,6 @@ import java.util.*;
 public class Vehicle{
 // ARRAY LIST HERE
   
-
-  ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
   
   public enum Categories{
     SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of vehicles
