@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.*; 
+
 
 
 // This is where the user or admin will be able to choose what vehicle they want to either buy or view
@@ -24,6 +27,11 @@ public class ChooseWindow extends JFrame implements ActionListener{
   JTextArea txtDisplay;
   
   JTextField choice;
+
+  public static ArrayList<Vehicle> typeList;
+
+  public static Vehicle chosenVehicle;
+  private int num;
 
   
   private Container base;
@@ -57,7 +65,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     
   }
 
-  public JPanel First(){ // vehicle category panel
+    public JPanel First(){ // vehicle category panel
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel); // panel added
@@ -95,7 +103,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel); // panel added
 // 
-    txtDisplay = new JTextArea(displayList("sedan")); // new Jtextareas created
+    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextareas created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // sedan display list added on screen
 
@@ -118,7 +126,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
-    txtDisplay = new JTextArea(displayList("SUV")); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // suv display list added on screen
 
@@ -141,7 +149,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
-    txtDisplay = new JTextArea(displayList("truck")); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // truck display list added on screen
 
@@ -164,7 +172,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel); 
 
-    txtDisplay = new JTextArea(displayList("coupe")); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); 
     // coupe display list added on screen
@@ -187,60 +195,38 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public void actionPerformed(ActionEvent e) {
     switch (e.getActionCommand()){
       case "Sedan":
+        typeList = carList.getSedans();
         layout.show(base, "sedan");
         break;
       case "Truck":
+        typeList = carList.getTrucks();
         layout.show(base, "truck");
         break;
       case "SUV":
+        typeList = carList.getSUVs();
         layout.show(base, "SUV");
         break;
       case "Coupe":
+        typeList = carList.getCoupes();
         layout.show(base, "coupe");
         break;
       case "Submit":
-        try {
-          
-        }
+        // try {
+        //   chosenVehicle = 
+
+        // }
     }
-        
-    
+
   }
 
-  public static String displayList (String type){ // displays lists of vehicle type chosen
+  public static String displayList (ArrayList<Vehicle> list){ // displays lists of vehicle type chosen
 
     String displayString = "";
     int i = 1; 
 
-    switch (type){
-      case "sedan":
-        for (Vehicle car: carList.getSedans()){ // displays types of sedans 
-          displayString += i + ". " + car.getName() + "\n";
-          i++;
-        }
-        break;
-      case "SUV":
-        for (Vehicle car: carList.getSUVs()){ // displays types of suvs
-          displayString += i + ". " +car.getName() + "\n";
-          i++;
-        }
-        break;
-      case "truck":
-        for (Vehicle car: carList.getTrucks()){ // displays types of trucks
-          displayString += i + ". " +car.getName() + "\n";
-          i++;
-        }
-        break;
-      case "coupe":
-        for (Vehicle car: carList.getCoupes()){ // displays types of trucks
-          displayString += i + ". " +car.getName() + "\n";
-          i++;
-        }
-        break;
-      default: 
-        System.out.println("Invalid");
-
-        
+    for (Vehicle car: list){ // displays types of car 
+      displayString += i + ". " + car.getName() + "\n";
+      i++;
     }
 
     return displayString;

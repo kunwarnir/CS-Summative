@@ -14,11 +14,11 @@ class VehicleList {
 
   static ArrayList<String[]> list = new ArrayList<String[]>(); 
   static String[][] array;
-  static List<Vehicle> vehicleList;
-  static List<Vehicle> sedans = new ArrayList<>();
-  static List<Vehicle> SUVs = new ArrayList<>();
-  static List<Vehicle> trucks = new ArrayList<>();
-  static List<Vehicle> coupes = new ArrayList<>();
+  static ArrayList<Vehicle> vehicleList;
+  static ArrayList<Vehicle> sedans = new ArrayList<>();
+  static ArrayList<Vehicle> SUVs = new ArrayList<>();
+  static ArrayList<Vehicle> trucks = new ArrayList<>();
+  static ArrayList<Vehicle> coupes = new ArrayList<>();
 
   public VehicleList(){
 
@@ -37,16 +37,16 @@ class VehicleList {
     }
   }
 
-  public List<Vehicle> getSedans(){
+  public ArrayList<Vehicle> getSedans(){
     return sedans;
   }
-  public List<Vehicle> getSUVs(){
+  public ArrayList<Vehicle> getSUVs(){
     return SUVs;
   }
-  public List<Vehicle> getTrucks(){
+  public ArrayList<Vehicle> getTrucks(){
     return trucks;
   }
-  public List<Vehicle> getCoupes(){
+  public ArrayList<Vehicle> getCoupes(){
     return coupes;
   }
 

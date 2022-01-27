@@ -52,7 +52,9 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(Color(255,0,0,100)); 
     add(panel); // panel added
+    
 
     lblTitle = new JLabel("Welcome to Barrhaven Hyundai!"); // title created
     lblTitle.setBounds(120, 50, 500, 40); // set frame size

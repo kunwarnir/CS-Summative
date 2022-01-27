@@ -14,7 +14,7 @@ public class Vehicle{
 // ARRAY LIST HERE
   
 
-  List<Vehicle> vehicleList = new ArrayList<Vehicle>();
+  ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
   
   public enum Categories{
     SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of vehicles
