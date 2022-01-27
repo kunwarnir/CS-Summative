@@ -20,13 +20,19 @@ class VehicleList {
   static ArrayList<Vehicle> trucks = new ArrayList<>();
   static ArrayList<Vehicle> coupes = new ArrayList<>();
 
-  public VehicleList(){
+  private static final VehicleList INSTANCE = new VehicleList();
+
+  private VehicleList(){
 
     this.vehicleList = new ArrayList<>();
 
     setList();
     makeInd();
     
+  }
+
+  public static VehicleList getInstance(){
+    return INSTANCE;
   }
 
   public void remove(Vehicle car){
@@ -146,7 +152,6 @@ class VehicleList {
       case "Sedan": cat = Vehicle.Categories.SEDAN; break;
       case "SUV": cat = Vehicle.Categories.SUV; break;
       case "Coupe": cat = Vehicle.Categories.COUPE; break;
-      case "Hatchback": cat = Vehicle.Categories.HATCHBACK; break;
       case "Truck": cat = Vehicle.Categories.TRUCK; break;
 
       default: System.out.println("Invalid"); cat = Vehicle.Categories.TRUCK;

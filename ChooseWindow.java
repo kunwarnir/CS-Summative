@@ -43,7 +43,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   private JButton btnSubmit4;
 
 
-  static VehicleList carList = new VehicleList(); // car list created
+  static VehicleList carList = VehicleList.getInstance(); // car list created
 
 
   public ChooseWindow(){
