@@ -214,7 +214,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
       case "Submit":
         try {
           
-          if (Integer.parseInt(choice.getText() > typeList.length){
+          if (Integer.parseInt(choice.getText()) > typeList.size()){
             System.out.println("Too Big");
           }
           else {

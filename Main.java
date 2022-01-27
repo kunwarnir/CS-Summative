@@ -21,6 +21,9 @@ class Main {
     //Plays audio once
     clip.start();
     //Plays the audio in a loop
-    clip.loop(Clip.LOOP_CONTINUOUSLY);
+    //clip.loop(Clip.LOOP_CONTINUOUSLY);
+
+    // i thought this would work apparently it doesnt maybe i have to importsomething
+
   }
 }
