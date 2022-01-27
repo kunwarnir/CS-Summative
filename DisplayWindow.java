@@ -49,7 +49,7 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
 
     switch (e.getActionCommand()){
       case "Buy":
-        if (client.getCanBuy){
+        if (client.getCanBuy()){
           carList.remove(chosenVehicle);
         }
         else {

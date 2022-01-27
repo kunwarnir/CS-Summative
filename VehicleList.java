@@ -152,6 +152,7 @@ class VehicleList {
       case "Sedan": cat = Vehicle.Categories.SEDAN; break;
       case "SUV": cat = Vehicle.Categories.SUV; break;
       case "Coupe": cat = Vehicle.Categories.COUPE; break;
+      case "Hatchback": cat = Vehicle.Categories.HATCHBACK; break;
       case "Truck": cat = Vehicle.Categories.TRUCK; break;
 
       default: System.out.println("Invalid"); cat = Vehicle.Categories.TRUCK;
