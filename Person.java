@@ -1,14 +1,22 @@
-// admins stats (money, etc)
 abstract class Person{
   
-  public String username; // admin enters username
+  public String username;
+  public boolean canBuy;
 
 
   public String getUsername(){ 
-    return username; // program returns admins username
+    return username;
   }
 
   public void setUsername(String user){ 
     this.username = user;
+  }
+
+  public void setCanBuy(boolean can){
+    this.canBuy = can;
+  }
+
+  public boolean isCanBuy(){
+    return canBuy;
   }
 }

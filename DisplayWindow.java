@@ -11,6 +11,7 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
   private JButton btnBack;
 
   static Vehicle chosenVehicle = ChooseWindow.chosenVehicle;
+  static Person user = InitialWindow.user;
 
   JTextArea txtDisplay;
 
