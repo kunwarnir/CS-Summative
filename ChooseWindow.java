@@ -230,6 +230,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
           else {
             chosenVehicle = typeList.get(num-1);
             System.out.println(chosenVehicle.getName());
+
+            DisplayWindow myFrame = new DisplayWindow(); // create LabelFrame
+            myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            myFrame.setSize(600, 500); // set frame size
+            myFrame.setVisible(true); // display frame
+            this.dispose();
           }
 
         } catch (NumberFormatException ex) {
@@ -246,6 +252,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
           else {
             chosenVehicle = typeList.get(num-1);
             System.out.println(chosenVehicle.getName());
+
+            DisplayWindow m = new DisplayWindow(); // create LabelFrame
+            m.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            m.setSize(600, 500); // set frame size
+            m.setVisible(true); // display frame
+            this.dispose();
           }
 
         } catch (NumberFormatException ex) {
@@ -262,6 +274,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
           else {
             chosenVehicle = typeList.get(num-1);
             System.out.println(chosenVehicle.getName());
+
+            DisplayWindow f = new DisplayWindow(); // create LabelFrame
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.setSize(600, 500); // set frame size
+            f.setVisible(true); // display frame
+            this.dispose();
           }
 
         } catch (NumberFormatException ex) {
@@ -278,6 +296,12 @@ public class ChooseWindow extends JFrame implements ActionListener{
           else {
             chosenVehicle = typeList.get(num-1);
             System.out.println(chosenVehicle.getName());
+
+            DisplayWindow r = new DisplayWindow(); // create LabelFrame
+            r.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            r.setSize(600, 500); // set frame size
+            r.setVisible(true); // display frame
+            this.dispose();
           }
 
         } catch (NumberFormatException ex) {
