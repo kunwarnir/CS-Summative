@@ -23,17 +23,13 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   JTextArea txtDisplay;
   
-  JTextField sedanChoice;
-  JTextField suvChoice;
-  JTextField truckChoice;
-  JTextField coupeChoice;
+  JTextField choice;
+
   
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
-  private JButton btnSubmit; // button for sedan 
-  private JButton btnSubmit1; // button for suv 
-  private JButton btnSubmit2; // button for truck 
-  private JButton btnSubmit3; // button for coupe 
+  private JButton btnSubmit; // button for submit 
+
 
   static VehicleList carList = new VehicleList(); // car list created
 
@@ -93,18 +89,19 @@ public class ChooseWindow extends JFrame implements ActionListener{
     return panel;
   }
 
-  public JPanel Sedan(){ // sedan button created
+  public JPanel Sedan(){ // sedan panel created 
+  
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel); // panel added
-
-    txtDisplay = new JTextArea(displayList("sedan")); // new Jtextarea created
+// 
+    txtDisplay = new JTextArea(displayList("sedan")); // new Jtextareas created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // sedan display list added on screen
 
-    sedanChoice = new JTextField(20); //user input here
-    sedanChoice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(sedanChoice); // text panel added to screen
+    choice = new JTextField(20); //user input here
+    choice.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice); // text panel added to screen
 
     btnSubmit = new JButton("Submit"); // button user created
     btnSubmit.setBounds(260, 350, 90, 50); // set frame size
@@ -116,7 +113,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   }
 
-  public JPanel SUV(){ // suv button created
+  public JPanel SUV(){ // suv panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel);
@@ -125,21 +122,21 @@ public class ChooseWindow extends JFrame implements ActionListener{
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // suv display list added on screen
 
-    suvChoice = new JTextField(20); //user input here
-    suvChoice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(suvChoice); // text panel added to screen
+    choice = new JTextField(20); //user input here
+    choice.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice); // text panel added to screen
 
-    btnSubmit1 = new JButton("Submit"); // button user created
-    btnSubmit1.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit1.setActionCommand("Submit");
-    btnSubmit1.addActionListener(this);
-    panel.add(btnSubmit1); // button added to screen
+    btnSubmit = new JButton("Submit"); // button user created
+    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit.setActionCommand("Submit");
+    btnSubmit.addActionListener(this);
+    panel.add(btnSubmit); // button added to screen
 
     return panel;
 
   }
 
-  public JPanel Truck(){ // truck button created
+  public JPanel Truck(){ // truck panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel);
@@ -148,38 +145,39 @@ public class ChooseWindow extends JFrame implements ActionListener{
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // truck display list added on screen
 
-    truckChoice = new JTextField(20); //user input here
-    truckChoice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(truckChoice); // text panel added to screen
+    choice = new JTextField(20); //user input here
+    choice.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice); // text panel added to screen
 
-    btnSubmit2 = new JButton("Submit"); // button user created
-    btnSubmit2.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit2.setActionCommand("Submit");
-    btnSubmit2.addActionListener(this);
-    panel.add(btnSubmit2); // button added to screen
+    btnSubmit = new JButton("Submit"); // button user created
+    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit.setActionCommand("Submit");
+    btnSubmit.addActionListener(this);
+    panel.add(btnSubmit); // button added to screen
 
     return panel;
 
   }
 
-  public JPanel Coupe(){ // coupe button created
+  public JPanel Coupe(){ // coupe panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    add(panel); 
 
     txtDisplay = new JTextArea(displayList("coupe")); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); 
-    add(panel); // coupe display list added on screen
+    // coupe display list added on screen
 
-    coupeChoice = new JTextField(20); //user input here
-    coupeChoice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(coupeChoice); // text panel added to screen
+    choice = new JTextField(20); //user input here
+    choice.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice); // text panel added to screen
 
-    btnSubmit3 = new JButton("Submit"); // button user created
-    btnSubmit3.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit3.setActionCommand("Submit");
-    btnSubmit3.addActionListener(this);
-    panel.add(btnSubmit3); // button added to screen
+    btnSubmit = new JButton("Submit"); // button user created
+    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit.setActionCommand("Submit");
+    btnSubmit.addActionListener(this);
+    panel.add(btnSubmit); // button added to screen
 
     return panel;
 
@@ -200,6 +198,10 @@ public class ChooseWindow extends JFrame implements ActionListener{
       case "Coupe":
         layout.show(base, "coupe");
         break;
+      case "Submit":
+        try {
+          
+        }
     }
         
     
