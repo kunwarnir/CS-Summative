@@ -14,5 +14,13 @@ class Main {
     myFrame.setSize(600, 500); // set frame size
     myFrame.setVisible(true); // display frame
 
+    File audioFile = new File("Music/mii_music.wav").getAbsoluteFile();
+    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(audioFile);
+    Clip clip = AudioSystem.getClip();
+    clip.open(audioInputStream);
+    //Plays audio once
+    clip.start();
+    //Plays the audio in a loop
+    clip.loop(Clip.LOOP_CONTINUOUSLY);
   }
 }

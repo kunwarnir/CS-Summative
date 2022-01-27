@@ -212,10 +212,18 @@ public class ChooseWindow extends JFrame implements ActionListener{
         layout.show(base, "coupe");
         break;
       case "Submit":
-        // try {
-        //   chosenVehicle = 
+        try {
+          
+          if (Integer.parseInt(choice.getText() > typeList.length){
+            System.out.println("Too Big");
+          }
+          else {
+            chosenVehicle = typeList.get(Integer.parseInt(choice.getText()));
+          }
 
-        // }
+        } catch (NumberFormatException ex) {
+          System.out.println("Wrong num");
+        }
     }
 
   }
