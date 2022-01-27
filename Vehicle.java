@@ -17,7 +17,7 @@ public class Vehicle{
   List<Vehicle> vehicleList = new ArrayList<Vehicle>();
   
   public enum Categories{
-    SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of car
+    SEDAN, SUV, COUPE, HATCHBACK, TRUCK; // model of vehicles
   }
 
   public enum Colours{
@@ -25,7 +25,7 @@ public class Vehicle{
   }
 
   public enum Types{
-    NEW, USED; // type of car
+    NEW, USED; // vehicle condition
   }
 
   public enum Statuses{
@@ -43,9 +43,9 @@ public class Vehicle{
   private final int price;
   private final int age;
 
-  public Vehicle(int year, String name, Colours colour, String engine, int cylinders, Categories category, int price, Types type, Statuses status, int age){
+  public Vehicle(int year, String name, Colours colour, String engine, int cylinders, Categories category, int price, Types type, Statuses status, int age){ // information of vehicles
     
-    this.year = year;
+    this.year = year; 
     this.name = name;
     this.colour = colour;
     this.engine = engine;
@@ -58,7 +58,7 @@ public class Vehicle{
 
   }
 
-  public int getYear(){
+  public int getYear(){ 
     return year;
   }
   public String getName(){

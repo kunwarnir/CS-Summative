@@ -3,7 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 
-public class DisplayWindow extends JFrame implements ActionListener{
+public class DisplayWindow extends JFrame implements ActionListener{ // display window created
 
   private JPanel panel;
   private JLabel lblTitle;
@@ -12,9 +12,9 @@ public class DisplayWindow extends JFrame implements ActionListener{
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
 
-  public DisplayWindow(){
+  public DisplayWindow(){ // display panel added
 
-    super("Display Window");
+    super("Display Window"); // display window shown on screen
 
     base = getContentPane();
     base.setLayout(layout);

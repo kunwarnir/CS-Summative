@@ -12,6 +12,7 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JButton btnUser;
   private JButton btnAdmin;
   private JButton btnLogin;
+  private JButton titleImage;
   private JLabel lblUsername;
   private JLabel lblUsernameError;
   private JLabel lblPassword;
@@ -21,7 +22,7 @@ public class InitialWindow extends JFrame implements ActionListener{
 
   private final String pass = "password";
 
-  public static Person client;
+  public static Person client; 
 
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
@@ -37,40 +38,55 @@ public class InitialWindow extends JFrame implements ActionListener{
     pnlAdmin = adminPanel();
     pnlUser = userPanel();
 
-    base.add(pnlInitial, "initial");
-    base.add(pnlAdmin, "admin");
-    base.add(pnlUser, "user");
+    base.add(pnlInitial, "initial"); // initial panel
+    base.add(pnlAdmin, "admin"); // admin button
+    base.add(pnlUser, "user"); // user button
 
     layout.show(base, "initial");
 
+    
+
   }
 
-  public JPanel initialPanel(){
+  public JPanel initialPanel(){ //initial panel created
 
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
     add(panel); // panel added
 
     lblTitle = new JLabel("Welcome to Barrhaven Hyundai!"); // title created
-    lblTitle.setBounds(150, 30, 300, 220); // set frame size
+    lblTitle.setBounds(120, 50, 500, 40); // set frame size
+    lblTitle.setFont(new Font("Serif", Font.BOLD,20)); 
     panel.add(lblTitle); // titel panel added
 
     btnUser = new JButton("User"); // button user created
-    btnUser.setBounds(260, 350, 80, 50); // set frame size
+    btnUser.setBounds(350, 300, 80, 50); // set frame size
     btnUser.setActionCommand("User");
     btnUser.addActionListener(this);
     panel.add(btnUser); // button added to screen
 
     btnAdmin = new JButton("Admin"); // button admin created
-    btnAdmin.setBounds(100, 350, 80, 50); // set frame size
+    btnAdmin.setBounds(150, 300, 80, 50); // set frame size
     btnAdmin.setActionCommand("Admin");
     btnAdmin.addActionListener(this);
     panel.add(btnAdmin); // button added to screen
 
+    titleImage = new JButton(new ImageIcon("Images/mainScreenImage.png"));
+    titleImage.setBounds(145, 100, 300, 150);
+    panel.add(titleImage);
+
+    
+
+
+    /*
+    category_2 = new JButton(new ImageIcon("Jeopardy Project Images/VideoGames.png"));
+    category_2.setBounds(175, 50, 150, 70);
+    panel.add(category_2);
+    */
     return panel;
   }
 
-  public JPanel adminPanel(){
+  public JPanel adminPanel(){ // admin panel created
     
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
@@ -105,7 +121,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     panel.add(txtPassword); // button added to screen
 
     btnLogin = new JButton("Login"); // new Jbutton created
-    btnLogin.setBounds(210, 350, 80, 50); // set frame size
+    btnLogin.setBounds(250, 400, 80, 50); // set frame size
     btnLogin.setActionCommand("Login");
     btnLogin.addActionListener(this);
     panel.add(btnLogin); // button added to screen
@@ -114,7 +130,7 @@ public class InitialWindow extends JFrame implements ActionListener{
 
   }
 
-  public JPanel userPanel(){
+  public JPanel userPanel(){ // user panel created
     
     JPanel panel = new JPanel(); // new Jpanel created
     panel.setLayout(null);
@@ -136,7 +152,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     
     btnLogin = new JButton("Login"); // new Jbutton created
     btnLogin.setBounds(210, 350, 80, 50); // set frame size
-    btnLogin.setActionCommand("Login");
+    btnLogin.setActionCommand("Login"); // login button created
     btnLogin.addActionListener(this);
     panel.add(btnLogin); // button added to screen
 
