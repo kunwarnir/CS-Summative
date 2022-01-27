@@ -36,7 +36,7 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
     panel.add(btnBuy); // button added to screen
 
     btnBack = new JButton("BUY"); // button user created
-    btnBack.setBounds(260, 350, 90, 50); // set frame size
+    btnBack.setBounds(0, 350, 90, 50); // set frame size
     btnBack.setActionCommand("Buy");
     btnBack.addActionListener(this);
     panel.add(btnBack); // button added to screen
