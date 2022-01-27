@@ -36,9 +36,9 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
     btnBuy.addActionListener(this);
     panel.add(btnBuy); // button added to screen
 
-    btnBack = new JButton("BUY"); // button user created
+    btnBack = new JButton("Back"); // button user created
     btnBack.setBounds(0, 350, 90, 50); // set frame size
-    btnBack.setActionCommand("Buy");
+    btnBack.setActionCommand("Back");
     btnBack.addActionListener(this);
     panel.add(btnBack); // button added to screen
     
@@ -55,6 +55,13 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
         else {
           System.out.println("You do not have authority to buy");
         }
+        break;
+      case "Back":
+        ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setSize(600, 500); // set frame size
+        myFrame.setVisible(true); // display frame
+        this.dispose();
         
     }
 
