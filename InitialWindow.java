@@ -21,6 +21,12 @@ public class InitialWindow extends JFrame implements ActionListener{
   private JTextField txtUserName;
   private JPasswordField txtPassword;
 
+
+  private JLabel lblUsernameError2;
+
+  private JTextField txtUserName2;
+  
+
   private final String pass = "password";
 
   public static Person client; 
@@ -116,7 +122,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     panel.add(lblPassword); // button added to screen
 
     lblPasswordError = new JLabel("   "); 
-    lblPasswordError.setBounds(145, 215, 3000, 25); // set frame size
+    lblPasswordError.setBounds(215, 215, 3000, 25); // set frame size
     lblPasswordError.setFont(new Font("Serif", Font.PLAIN, 12));
     lblPasswordError.setForeground(Color.RED);
     panel.add(lblPasswordError); // button added to screen
@@ -146,15 +152,15 @@ public class InitialWindow extends JFrame implements ActionListener{
     lblUsername.setBounds(223, 30, 150, 25); // set frame size
     panel.add(lblUsername); // button added to screen
 
-    lblUsernameError = new JLabel("   ");
-    lblUsernameError.setBounds(215, 100, 3000, 25); // set frame size
-    lblUsernameError.setFont(new Font("Serif", Font.PLAIN, 12));
-    lblUsernameError.setForeground(Color.RED);
-    panel.add(lblUsernameError);
+    lblUsernameError2 = new JLabel("   ");
+    lblUsernameError2.setBounds(215, 100, 3000, 25); // set frame size
+    lblUsernameError2.setFont(new Font("Serif", Font.PLAIN, 12));
+    lblUsernameError2.setForeground(Color.RED);
+    panel.add(lblUsernameError2);
 
-    txtUserName = new JTextField(20); // new Jtextfield created
-    txtUserName.setBounds(225, 75, 150, 25); // set frame size
-    panel.add(txtUserName); // button added to screen
+    txtUserName2 = new JTextField(20); // new Jtextfield created
+    txtUserName2.setBounds(225, 75, 150, 25); // set frame size
+    panel.add(txtUserName2); // button added to screen
     
     btnLogin = new JButton("Login"); // new Jbutton created
     btnLogin.setBounds(210, 350, 80, 50); // set frame size
@@ -173,18 +179,53 @@ public class InitialWindow extends JFrame implements ActionListener{
       case "User":
         layout.show(base, "user");
         client = User.getInstance();
+        client.setCanBuy(false);
         break;
       case "Admin":
         layout.show(base, "admin");
         client = Admin.getInstance();
+        client.setCanBuy(true);
 
         break;
       case "Login":
-        ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
-        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setSize(600, 500); // set frame size
-        myFrame.setVisible(true); // display frame
-        this.dispose();
+        if(client.getCanBuy()){
+          if (txtUserName.getText().isEmpty()){
+            lblUsernameError.setText("Username cannot be empty!");
+          }
+          else {
+            client.setUsername(txtUserName.getText());
+            if (txtPassword.getText().isEmpty()){
+              lblPasswordError.setText("Incorrect Password");
+            }
+            else if (!txtPassword.getText().equals(pass)){
+              lblPasswordError.setText("Incorrect Password");
+            }
+            else {
+              ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
+              myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+              myFrame.setSize(600, 500); // set frame size
+              myFrame.setVisible(true); // display frame
+              this.dispose();
+            }
+          }
+        }
+        else {
+          if (txtUserName2.getText().isEmpty()){
+            lblUsernameError2.setText("Username cannot be empty!");
+          }
+          else {
+            client.setUsername(txtUserName2.getText());
+
+            ChooseWindow myFrame = new ChooseWindow(); // create LabelFrame
+            myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            myFrame.setSize(600, 500); // set frame size
+            myFrame.setVisible(true); // display frame
+            this.dispose();
+          }
+        }
+
+
+
     }
 
   }
