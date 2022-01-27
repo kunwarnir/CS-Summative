@@ -21,6 +21,7 @@ public class DisplayWindow extends JFrame implements ActionListener{ // display 
 
     panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added
     
   }

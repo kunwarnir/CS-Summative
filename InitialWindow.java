@@ -34,7 +34,7 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     base = getContentPane();
     base.setLayout(layout);
-    base.setBackground(new Color(255,0,0,100)); 
+    base.setBackground(new Color(176,216,230)); 
     
     pnlInitial = initialPanel();
     pnlAdmin = adminPanel();
@@ -54,7 +54,7 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    panel.setBackground(new Color(255,0,0,100)); 
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added
     
 
@@ -94,6 +94,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added
 
     lblUsername = new JLabel("Enter Your Username"); // username created
@@ -138,6 +139,7 @@ public class InitialWindow extends JFrame implements ActionListener{
     
     JPanel panel = new JPanel(); // new Jpanel created
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added to screen
 
     lblUsername = new JLabel("Enter Your Username"); // new Jlabel created

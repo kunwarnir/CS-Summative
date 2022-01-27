@@ -26,17 +26,22 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   JTextArea txtDisplay;
   
-  JTextField choice;
+  JTextField choice1;
+  JTextField choice2;
+  JTextField choice3;
+  JTextField choice4;
 
   public static ArrayList<Vehicle> typeList;
 
   public static Vehicle chosenVehicle;
   private int num;
 
-  
   private Container base;
   private CardLayout layout = new CardLayout(); // create new cardlayout
-  private JButton btnSubmit; // button for submit 
+  private JButton btnSubmit1; // button for submit 
+  private JButton btnSubmit2;
+  private JButton btnSubmit3;
+  private JButton btnSubmit4;
 
 
   static VehicleList carList = new VehicleList(); // car list created
@@ -68,6 +73,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     public JPanel First(){ // vehicle category panel
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added
 
     btnSedan = new JButton(new ImageIcon("Images/category_sedan.png")); // button sedan created 
@@ -101,21 +107,22 @@ public class ChooseWindow extends JFrame implements ActionListener{
   
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); // panel added
 // 
     txtDisplay = new JTextArea(displayList(carList.getSedans())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // sedan display list added on screen
 
-    choice = new JTextField(20); //user input here
-    choice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(choice); // text panel added to screen
+    choice1 = new JTextField(20); //user input here
+    choice1.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice1); // text panel added to screen
 
-    btnSubmit = new JButton("Submit"); // button user created
-    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit.setActionCommand("Submit");
-    btnSubmit.addActionListener(this);
-    panel.add(btnSubmit); // button added to screen
+    btnSubmit1 = new JButton("Submit"); // button user created
+    btnSubmit1.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit1.setActionCommand("Submit1");
+    btnSubmit1.addActionListener(this);
+    panel.add(btnSubmit1); // button added to screen
 
     return panel;
 
@@ -124,21 +131,22 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public JPanel SUV(){ // suv panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel);
 
     txtDisplay = new JTextArea(displayList(carList.getSUVs())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // suv display list added on screen
 
-    choice = new JTextField(20); //user input here
-    choice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(choice); // text panel added to screen
+    choice2 = new JTextField(20); //user input here
+    choice2.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice2); // text panel added to screen
 
-    btnSubmit = new JButton("Submit"); // button user created
-    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit.setActionCommand("Submit");
-    btnSubmit.addActionListener(this);
-    panel.add(btnSubmit); // button added to screen
+    btnSubmit2 = new JButton("Submit"); // button user created
+    btnSubmit2.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit2.setActionCommand("Submit2");
+    btnSubmit2.addActionListener(this);
+    panel.add(btnSubmit2); // button added to screen
 
     return panel;
 
@@ -147,21 +155,22 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public JPanel Truck(){ // truck panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel);
 
     txtDisplay = new JTextArea(displayList(carList.getTrucks())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // truck display list added on screen
 
-    choice = new JTextField(20); //user input here
-    choice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(choice); // text panel added to screen
+    choice3 = new JTextField(20); //user input here
+    choice3.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice3); // text panel added to screen
 
-    btnSubmit = new JButton("Submit"); // button user created
-    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit.setActionCommand("Submit");
-    btnSubmit.addActionListener(this);
-    panel.add(btnSubmit); // button added to screen
+    btnSubmit3 = new JButton("Submit"); // button user created
+    btnSubmit3.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit3.setActionCommand("Submit3");
+    btnSubmit3.addActionListener(this);
+    panel.add(btnSubmit3); // button added to screen
 
     return panel;
 
@@ -170,6 +179,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
   public JPanel Coupe(){ // coupe panel created
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
+    panel.setBackground(new Color(176,216,230)); 
     add(panel); 
 
     txtDisplay = new JTextArea(displayList(carList.getCoupes())); // new Jtextarea created
@@ -177,15 +187,15 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.add(txtDisplay); 
     // coupe display list added on screen
 
-    choice = new JTextField(20); //user input here
-    choice.setBounds(230, 320, 150, 25); // set frame size
-    panel.add(choice); // text panel added to screen
+    choice4 = new JTextField(20); //user input here
+    choice4.setBounds(230, 320, 150, 25); // set frame size
+    panel.add(choice4); // text panel added to screen
 
-    btnSubmit = new JButton("Submit"); // button user created
-    btnSubmit.setBounds(260, 350, 90, 50); // set frame size
-    btnSubmit.setActionCommand("Submit");
-    btnSubmit.addActionListener(this);
-    panel.add(btnSubmit); // button added to screen
+    btnSubmit4 = new JButton("Submit"); // button user created
+    btnSubmit4.setBounds(260, 350, 90, 50); // set frame size
+    btnSubmit4.setActionCommand("Submit4");
+    btnSubmit4.addActionListener(this);
+    panel.add(btnSubmit4); // button added to screen
 
     return panel;
 
@@ -211,19 +221,70 @@ public class ChooseWindow extends JFrame implements ActionListener{
         typeList = carList.getCoupes();
         layout.show(base, "coupe");
         break;
-      case "Submit":
+      case "Submit1":
         try {
-          
-          if (Integer.parseInt(choice.getText()) > typeList.size()){
+
+          num = Integer.parseInt(choice1.getText()); 
+          if (num > typeList.size()){
             System.out.println("Too Big");
           }
           else {
-            chosenVehicle = typeList.get(Integer.parseInt(choice.getText()));
+            chosenVehicle = typeList.get(num-1);
+            System.out.println(chosenVehicle.getName());
           }
 
         } catch (NumberFormatException ex) {
           System.out.println("Wrong num");
         }
+        break;
+      case "Submit2":
+        try {
+
+          num = Integer.parseInt(choice2.getText()); 
+          if (num > typeList.size()){
+            System.out.println("Too Big");
+          }
+          else {
+            chosenVehicle = typeList.get(num-1);
+            System.out.println(chosenVehicle.getName());
+          }
+
+        } catch (NumberFormatException ex) {
+          System.out.println("Wrong num");
+        }
+        break;
+      case "Submit3":
+        try {
+
+          num =Integer.parseInt(choice3.getText()); 
+          if (num > typeList.size()){
+            System.out.println("Too Big");
+          }
+          else {
+            chosenVehicle = typeList.get(num-1);
+            System.out.println(chosenVehicle.getName());
+          }
+
+        } catch (NumberFormatException ex) {
+          System.out.println("Wrong num");
+        }
+        break;
+      case "Submit4":
+        try {
+
+          num = Integer.parseInt(choice4.getText()); 
+          if (num > typeList.size()){
+            System.out.println("Too Big");
+          }
+          else {
+            chosenVehicle = typeList.get(num-1);
+            System.out.println(chosenVehicle.getName());
+          }
+
+        } catch (NumberFormatException ex) {
+          System.out.println("Wrong num");
+        }
+        break;
     }
 
   }
