@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
 
+
 public class InitialWindow extends JFrame implements ActionListener{
 
   private JPanel pnlInitial;
@@ -33,7 +34,8 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     base = getContentPane();
     base.setLayout(layout);
-
+    base.setBackground(new Color(255,0,0,100)); 
+    
     pnlInitial = initialPanel();
     pnlAdmin = adminPanel();
     pnlUser = userPanel();
@@ -52,7 +54,7 @@ public class InitialWindow extends JFrame implements ActionListener{
 
     JPanel panel = new JPanel(); // create new Jpanel
     panel.setLayout(null);
-    panel.setBackground(Color(255,0,0,100)); 
+    panel.setBackground(new Color(255,0,0,100)); 
     add(panel); // panel added
     
 

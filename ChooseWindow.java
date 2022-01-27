@@ -41,6 +41,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
 
   static VehicleList carList = new VehicleList(); // car list created
 
+
   public ChooseWindow(){
 
     super("Choose Window"); // Set frame 
@@ -61,7 +62,6 @@ public class ChooseWindow extends JFrame implements ActionListener{
     base.add(pnlCoupe, "coupe"); // coupe panel added
 
     layout.show(base, "first");
-
     
   }
 
@@ -103,7 +103,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel); // panel added
 // 
-    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextareas created
+    txtDisplay = new JTextArea(displayList(carList.getSedans())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // sedan display list added on screen
 
@@ -126,7 +126,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
-    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(carList.getSUVs())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // suv display list added on screen
 
@@ -149,7 +149,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel);
 
-    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(carList.getTrucks())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); // truck display list added on screen
 
@@ -172,7 +172,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     panel.setLayout(null);
     add(panel); 
 
-    txtDisplay = new JTextArea(displayList(typeList)); // new Jtextarea created
+    txtDisplay = new JTextArea(displayList(carList.getCoupes())); // new Jtextarea created
     txtDisplay.setBounds(215, 85, 175, 225); // set frame size
     panel.add(txtDisplay); 
     // coupe display list added on screen
@@ -196,6 +196,7 @@ public class ChooseWindow extends JFrame implements ActionListener{
     switch (e.getActionCommand()){
       case "Sedan":
         typeList = carList.getSedans();
+        
         layout.show(base, "sedan");
         break;
       case "Truck":
